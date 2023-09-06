@@ -1,0 +1,24 @@
+.logo {
+  font-weight: bold;
+  color: black;
+  font-size: 1.5rem;
+}
+.test {
+  min-height: 100vh;
+  aside {
+    height: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .test {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    min-height: unset;
+    height: 100%;
+    aside {
+      height: 100%;
+    }
+  }
+}

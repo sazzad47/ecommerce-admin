@@ -1,0 +1,80 @@
+%back_button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $mainColor;
+  color: #fff;
+  font-size: 24px;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $greenColor;
+  }
+
+  i {
+    transform: rotate(180deg);
+  }
+}
+%disabled_btn {
+  background-color: rgb(216, 216, 216) !important;
+  color: #000000 !important;
+}
+%btn {
+  display: inline-block;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: $mainColor;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 0px 5px;
+  transition: background-color 0.2s ease-in-out;
+  &:hover {
+    background-color: rgb(216, 216, 216);
+    color: #000000;
+  }
+  &.disabled {
+    @extend %disabled_btn;
+  }
+}
+
+%anchor_button {
+  border: none;
+  border-radius: 5px;
+  color: $mainColor;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 0px 5px;
+  transition: background-color 0.2s ease-in-out;
+  &:hover {
+    color: rgba($color: $mainColor, $alpha: 0.7);
+  }
+}
+%btn_second {
+  display: inline-block;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: $greenColor;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 0px 5px;
+
+  transition: background-color 0.2s ease-in-out;
+  &:hover {
+    background-color: rgb(216, 216, 216);
+    color: #000000;
+  }
+}

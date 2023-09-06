@@ -1,0 +1,1 @@
+preAdding : its a function that you will see in some hooks and main purpose is to make the data ready to be sent to the server

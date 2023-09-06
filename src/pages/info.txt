@@ -1,0 +1,17 @@
+
+in most pages you will find a variable called columns 
+here is a breif about it
+
+In Ant Design (antd) tables, the columns configuration is used to define the structure and content of the columns in the table. Each object within the columns array represents a single column in the table and contains properties that define how the data for that column should be displayed. Let's break down your example and explain why you've used certain properties and functions:
+
+title: This property specifies the header title of the column.
+dataIndex: This property indicates the key of the data in your dataset that corresponds to this column. It's used to retrieve the data for that specific column.
+key: This is a unique identifier for the column, which helps React render efficiently and maintain state.
+render: This is a function that allows you to customize the content of a cell in the column. It's called for each row in the table and is given the cell's value and the corresponding record as parameters. It returns what should be rendered within the cell.
+
+
+In general, the columns configuration provides you with a flexible way to define how your data should be presented in an Ant Design table. By combining different properties and the render function, you can achieve various customization options and create user-friendly and interactive tables.
+
+
+
+
