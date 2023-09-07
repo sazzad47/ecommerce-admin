@@ -1,4 +1,4 @@
-export const ORIGIN_BASE = "http://localhost:5000";
+export const ORIGIN_BASE = "https://ecommerce-server-s.up.railway.app";
 
 
 // Values for the cart
