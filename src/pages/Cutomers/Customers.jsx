@@ -44,6 +44,7 @@ const Customers = () => {
     <AppLayout active={"2"}>
       <div>
         <h1>All store customers</h1>
+        <CustomerSearch />
         {CustomersLoading && <Oval color="black" width={100} height={100} />}
         {!CustomersLoading && CustomersSuccess && (
           <Table
@@ -54,7 +55,7 @@ const Customers = () => {
           />
         )}
 
-        <CustomerSearch />
+       
       </div>
     </AppLayout>
   );

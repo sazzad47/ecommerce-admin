@@ -43,7 +43,7 @@ const Login = () => {
           Login
         </Title>
         <Form.Item
-          label="email"
+          label="Email"
           name="email"
           rules={[
             {

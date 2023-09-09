@@ -60,6 +60,7 @@ const Orders = () => {
     <AppLayout active={"3"}>
       <div>
         <Title level={2}>Orders</Title>
+        <OrderSearch handleViewOrder={handleViewOrder} />
         {OrdersLoading && <Oval color="black" width={100} height={100} />}
         {!OrdersLoading && OrdersSuccess && (
           <Table
@@ -75,7 +76,6 @@ const Orders = () => {
           order={selectedOrder}
           onCancel={() => setModalVisible(false)}
         />
-        <OrderSearch handleViewOrder={handleViewOrder} />
       </div>
     </AppLayout>
   );
