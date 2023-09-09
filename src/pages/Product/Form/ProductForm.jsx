@@ -6,6 +6,7 @@ import ProductProps from "./ProductProps";
 import ProductDescription from "./ProductDescription";
 import { ProductHooks ,  } from "../../../Features";
 import { Oval } from "react-loader-spinner";
+import { MenuItem, Select, TextField } from "@mui/material";
 export const ProductFormContext = createContext();
 
 const ProductForm = () => {
@@ -59,7 +60,7 @@ const ProductForm = () => {
               validateStatus={errors.name ? "error" : ""}
               help={errors.name && errors.name.message}
             >
-              <input {...register("name", { required: "Name is required" })} />
+              <TextField variant="standard" {...register("name", { required: "Name is required" })} />
             </Form.Item>
             <Form.Item
               label="Category"
@@ -67,21 +68,22 @@ const ProductForm = () => {
               help={errors.category_id && errors.category_id.message}
             >
               {!CategoryLoading && (
-                <select
+                <Select
+                 variant="standard"
                   style={{ width: "200px" }}
                   {...register("category_id", {
                     required: "Category is required",
                   })}
                 >
-                  <option value="">Select category</option>
+                  <MenuItem value="">Select category</MenuItem>
                   {CategoryData?.data.map((ct) => {
                     return (
-                      <option value={ct.id} key={ct.id}>
+                      <MenuItem value={ct.id} key={ct.id}>
                         {ct.title}
-                      </option>
+                      </MenuItem>
                     );
                   })}
-                </select>
+                </Select>
               )}
             </Form.Item>
             <Form.Item
@@ -91,23 +93,24 @@ const ProductForm = () => {
                 errors.short_description && errors.short_description.message
               }
             >
-              <input
+              <TextField
+               variant="standard"
                 {...register("short_description", {
                   required: "Short Description is required",
                 })}
               />
             </Form.Item>
           </div>
-
-          <div className="d-flex g-15">
-            <Form.Item
+          <div className="d-flex a-center g-15">
+          <Form.Item
               label="Price"
               validateStatus={errors.price ? "error" : ""}
               help={errors.price && errors.price.message}
             >
-              <input
+              <TextField
+                variant="standard"
                 type="number"
-                step="0.1"
+             
                 {...register("price", { required: "Price is required" })}
               />
             </Form.Item>
@@ -116,7 +119,8 @@ const ProductForm = () => {
               validateStatus={errors.stock ? "error" : ""}
               help={errors.stock && errors.stock.message}
             >
-              <input
+              <TextField
+                variant="standard"
                 type="number"
                 {...register("stock", { required: "Stock is required" })}
               />
@@ -126,11 +130,13 @@ const ProductForm = () => {
               validateStatus={errors.discount ? "error" : ""}
               help={errors.discount && errors.discount.message}
             >
-              <input
+             <TextField
+                variant="standard"
                 type="number"
                 {...register("discount", { required: "Discount is required" })}
               />
             </Form.Item>
+           
           </div>
 
           <div className="d-flex g-15">
@@ -139,7 +145,8 @@ const ProductForm = () => {
               validateStatus={errors.max_order ? "error" : ""}
               help={errors.max_order && errors.max_order.message}
             >
-              <input
+              <TextField
+                variant="standard"
                 type="number"
                 {...register("max_order", {
                   required: "Max Order is required",
@@ -151,7 +158,8 @@ const ProductForm = () => {
               validateStatus={errors.min_order ? "error" : ""}
               help={errors.min_order && errors.min_order.message}
             >
-              <input
+              <TextField
+                variant="standard"
                 type="number"
                 {...register("min_order", {
                   required: "Min Order is required",
