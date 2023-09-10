@@ -8,14 +8,15 @@ import {
   FiLogOut,
   FiSettings,
   FiArrowLeft,
-  FiArrowRight
+  FiArrowRight,
 } from "react-icons/fi";
 import "./Layout.scss";
 import { Link } from "react-router-dom";
 import { AdminHooks } from "../../Features";
-import { IconButton } from "@mui/material";
+import { IconButton, useMediaQuery } from "@mui/material";
 const { Header, Sider, Content } = Layout;
 const AppLayout = ({ children, active }) => {
+  const isTablet = useMediaQuery("(max-width:768px)");
   const { useAdminDetails } = AdminHooks;
   const { admin } = useAdminDetails();
   const handleClick = () => {
@@ -38,7 +39,7 @@ const AppLayout = ({ children, active }) => {
         <Sider
           width={250}
           theme="light"
-          breakpoint="lg"
+          breakpoint="md"
           collapsedWidth="0"
           collapsed={isSidebarCollapsed}
           onCollapse={toggleSidebar}
@@ -85,13 +86,15 @@ const AppLayout = ({ children, active }) => {
           style={{ background: "#fff", padding: "0 16px" }}
         >
           <div className="user-info g-15">
-            <IconButton onClick={toggleSidebar}>
-              {isSidebarCollapsed ? (
-                <FiArrowRight style={{ fontSize: "2rem" }} />
-              ) : (
-                <FiArrowLeft style={{ fontSize: "2rem" }} />
-              )}
-            </IconButton>
+            {!isTablet && (
+              <IconButton onClick={toggleSidebar}>
+                {isSidebarCollapsed ? (
+                  <FiArrowRight style={{ fontSize: "2rem" }} />
+                ) : (
+                  <FiArrowLeft style={{ fontSize: "2rem" }} />
+                )}
+              </IconButton>
+            )}
           </div>
           <div className="user-info d-flex a-center j-end g-15">
             <span className="user-name">{admin?.name}</span>
