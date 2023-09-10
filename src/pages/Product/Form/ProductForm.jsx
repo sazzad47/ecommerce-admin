@@ -38,21 +38,20 @@ const ProductForm = () => {
 
   const onSubmit = (data) => {
     preAdding({ ...data, ...addtional });
-    console.log("additional", addtional);
   };
 
   useEffect(() => {
     GetCategory();
     setAdditional({ description: "", properties: [] });
+
+    // Assign the ref value once the component is mounted
+    uploadInput.current = document.getElementById("uploadInput");
   }, []);
 
   useEffect(() => {
     if (ProductAddSuccess) {
       reset();
     }
-
-    // Assign the ref value once the component is mounted
-    uploadInput.current = document.getElementById("uploadInput");
   }, [ProductAddLoading, ProductAddSuccess]);
 
   return (
