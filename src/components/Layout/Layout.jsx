@@ -7,10 +7,12 @@ import {
   FiShoppingBag,
   FiLogOut,
   FiSettings,
+  FiArrowLeft,
 } from "react-icons/fi";
 import "./Layout.scss";
 import { Link } from "react-router-dom";
 import { AdminHooks } from "../../Features";
+import { IconButton } from "@mui/material";
 const { Header, Sider, Content } = Layout;
 const AppLayout = ({ children, active }) => {
   const { useAdminDetails } = AdminHooks;
@@ -62,10 +64,15 @@ const AppLayout = ({ children, active }) => {
 
       <Layout className="site-layout">
         <Header
-          className="site-layout-background"
+          className="site-layout-background d-flex a-center j-between"
           style={{ background: "#fff", padding: "0 16px" }}
         >
-          <div className="user-info d-flex a-center g-15">
+          <div className="user-info g-15">
+            <IconButton>
+            <FiArrowLeft style={{fontSize: "2rem"}} />
+            </IconButton>
+          </div>
+          <div className="user-info d-flex a-center j-end g-15">
             <span className="user-name">{admin?.name}</span>
           </div>
         </Header>

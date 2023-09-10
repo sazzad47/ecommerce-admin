@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import { Form, Input, Button, Typography } from "antd";
+import { Form, Button } from "antd";
 import { AdminHooks } from "../../Features";
 import { useNavigate } from "react-router";
 import { toast } from "react-hot-toast";
-const { Title } = Typography;
+import { Avatar, Box, Grid, Paper, TextField, Typography } from "@mui/material";
+import {BsPersonFillLock} from "react-icons/bs";
 
 const Login = () => {
   const { useLogin } = AdminHooks;
@@ -22,59 +23,79 @@ const Login = () => {
     }
   }, [isError, isLoading]);
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
+    <Grid
+      container
+      component="main"
+      sx={{ maxWidth: "500px", margin: "0 auto", padding: "3rem 1rem" }}
     >
-      <Form
-        name="loginForm"
-        layout="vertical"
-        initialValues={{
-          remember: true,
-        }}
-        onFinish={onFinish}
-        style={{ width: "300px" }}
-      >
-        <Title level={3} style={{ textAlign: "center" }}>
-          Login
-        </Title>
-        <Form.Item
-          label="Email"
-          name="email"
-          rules={[
-            {
-              required: true,
-              message: "Please input your email!",
-            },
-          ]}
+      <Grid item xs={12} component={Paper} elevation={6}>
+        <Box
+          sx={{
+            my: 8,
+            mx: 4,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
         >
-          <Input />
-        </Form.Item>
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+            <BsPersonFillLock/>
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Login
+          </Typography>
+          <Form
+            name="loginForm"
+            layout="vertical"
+            initialValues={{
+              remember: true,
+            }}
+            onFinish={onFinish}
+            style={{ width: "100%" }}
+          >
+            <Form.Item
+              name="email"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your email!",
+                },
+              ]}
+            >
+              <TextField label="Email" variant="standard" fullWidth />
+            </Form.Item>
 
-        <Form.Item
-          label="Password"
-          name="password"
-          rules={[
-            {
-              required: true,
-              message: "Please input your password!",
-            },
-          ]}
-        >
-          <Input.Password />
-        </Form.Item>
+            <Form.Item
+              name="password"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your password!",
+                },
+              ]}
+            >
+              <TextField
+                label="Password"
+                variant="standard"
+                type="password"
+                fullWidth
+              />
+            </Form.Item>
 
-        <Form.Item>
-          <Button type="primary" htmlType="submit" loading={isLoading} block>
-            Log in
-          </Button>
-        </Form.Item>
-      </Form>
-    </div>
+            <Form.Item>
+              <Button
+                type="primary"
+                htmlType="submit"
+                loading={isLoading}
+                block
+              >
+                Log in
+              </Button>
+            </Form.Item>
+          </Form>
+        </Box>
+      </Grid>
+    </Grid>
   );
 };
 
