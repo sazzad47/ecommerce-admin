@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Layout, Menu } from "antd";
 import {
   FiHome,
@@ -8,6 +8,7 @@ import {
   FiLogOut,
   FiSettings,
   FiArrowLeft,
+  FiArrowRight
 } from "react-icons/fi";
 import "./Layout.scss";
 import { Link } from "react-router-dom";
@@ -22,10 +23,26 @@ const AppLayout = ({ children, active }) => {
     window.location.reload();
   };
 
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarCollapsed(!isSidebarCollapsed);
+  };
+
   return (
-    <Layout style={{ minHeight: "100vh" }} className="site-layout-pranet">
+    <Layout
+      style={{ minHeight: "100vh" }}
+      className={`site-layout-pranet ${isSidebarCollapsed ? "collapsed" : ""}`}
+    >
       <div className="test">
-        <Sider width={250} theme="light" breakpoint="lg" collapsedWidth="0">
+        <Sider
+          width={250}
+          theme="light"
+          breakpoint="lg"
+          collapsedWidth="0"
+          collapsed={isSidebarCollapsed}
+          onCollapse={toggleSidebar}
+        >
           <div className="logo d-flex a-center j-center mt-3 mb-3">
             ECOMMERCE.
           </div>
@@ -68,8 +85,12 @@ const AppLayout = ({ children, active }) => {
           style={{ background: "#fff", padding: "0 16px" }}
         >
           <div className="user-info g-15">
-            <IconButton>
-            <FiArrowLeft style={{fontSize: "2rem"}} />
+            <IconButton onClick={toggleSidebar}>
+              {isSidebarCollapsed ? (
+                <FiArrowRight style={{ fontSize: "2rem" }} />
+              ) : (
+                <FiArrowLeft style={{ fontSize: "2rem" }} />
+              )}
             </IconButton>
           </div>
           <div className="user-info d-flex a-center j-end g-15">
