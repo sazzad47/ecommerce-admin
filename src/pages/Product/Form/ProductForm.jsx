@@ -64,7 +64,7 @@ const ProductForm = () => {
     >
       <form className="d-flex-column" onSubmit={handleSubmit(onSubmit)}>
         <div className="d-flex-column g-15 w-100">
-          <div className="d-flex a-center g-15">
+          <div className="d-flex g-15">
             <Form.Item
               validateStatus={errors.name ? "error" : ""}
               help={errors.name && errors.name.message}
@@ -115,7 +115,7 @@ const ProductForm = () => {
               />
             </Form.Item>
           </div>
-          <div className="d-flex a-center g-15">
+          <div className="d-flex g-15">
             <Form.Item
               validateStatus={errors.price ? "error" : ""}
               help={errors.price && errors.price.message}
