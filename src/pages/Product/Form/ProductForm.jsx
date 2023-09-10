@@ -66,22 +66,23 @@ const ProductForm = () => {
         <div className="d-flex-column g-15 w-100">
           <div className="d-flex a-center g-15">
             <Form.Item
-              label="Name"
               validateStatus={errors.name ? "error" : ""}
               help={errors.name && errors.name.message}
             >
               <TextField
+                label="Name"
                 variant="standard"
                 {...register("name", { required: "Name is required" })}
               />
             </Form.Item>
             <Form.Item
-              label="Category"
               validateStatus={errors.category_id ? "error" : ""}
               help={errors.category_id && errors.category_id.message}
             >
               {!CategoryLoading && (
-                <Select
+                <TextField
+                  select
+                  label="Category"
                   variant="standard"
                   style={{ width: "200px" }}
                   {...register("category_id", {
@@ -96,17 +97,17 @@ const ProductForm = () => {
                       </MenuItem>
                     );
                   })}
-                </Select>
+                </TextField>
               )}
             </Form.Item>
             <Form.Item
-              label="Short Description"
               validateStatus={errors.short_description ? "error" : ""}
               help={
                 errors.short_description && errors.short_description.message
               }
             >
               <TextField
+                label="Short Description"
                 variant="standard"
                 {...register("short_description", {
                   required: "Short Description is required",
@@ -116,33 +117,33 @@ const ProductForm = () => {
           </div>
           <div className="d-flex a-center g-15">
             <Form.Item
-              label="Price"
               validateStatus={errors.price ? "error" : ""}
               help={errors.price && errors.price.message}
             >
               <TextField
+                label="Price"
                 variant="standard"
                 type="number"
                 {...register("price", { required: "Price is required" })}
               />
             </Form.Item>
             <Form.Item
-              label="Stock"
               validateStatus={errors.stock ? "error" : ""}
               help={errors.stock && errors.stock.message}
             >
               <TextField
+                label="Stock"
                 variant="standard"
                 type="number"
                 {...register("stock", { required: "Stock is required" })}
               />
             </Form.Item>
             <Form.Item
-              label="Discount"
               validateStatus={errors.discount ? "error" : ""}
               help={errors.discount && errors.discount.message}
             >
               <TextField
+                label="Discount"
                 variant="standard"
                 type="number"
                 {...register("discount", { required: "Discount is required" })}
@@ -152,11 +153,11 @@ const ProductForm = () => {
 
           <div className="d-flex g-15">
             <Form.Item
-              label="Max Order"
               validateStatus={errors.max_order ? "error" : ""}
               help={errors.max_order && errors.max_order.message}
             >
               <TextField
+                label="Max Order"
                 variant="standard"
                 type="number"
                 {...register("max_order", {
@@ -165,11 +166,11 @@ const ProductForm = () => {
               />
             </Form.Item>
             <Form.Item
-              label="Min Order"
               validateStatus={errors.min_order ? "error" : ""}
               help={errors.min_order && errors.min_order.message}
             >
               <TextField
+                label="Min Order"
                 variant="standard"
                 type="number"
                 {...register("min_order", {
