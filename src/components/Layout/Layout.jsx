@@ -16,7 +16,7 @@ import { AdminHooks } from "../../Features";
 import { IconButton, useMediaQuery } from "@mui/material";
 const { Header, Sider, Content } = Layout;
 const AppLayout = ({ children, active }) => {
-  const isTablet = useMediaQuery("(max-width:768px)");
+  const isTablet = useMediaQuery("(max-width:992px)");
   const { useAdminDetails } = AdminHooks;
   const { admin } = useAdminDetails();
   const handleClick = () => {
@@ -35,11 +35,11 @@ const AppLayout = ({ children, active }) => {
       style={{ minHeight: "100vh" }}
       className={`site-layout-pranet ${isSidebarCollapsed ? "collapsed" : ""}`}
     >
-      <div className="test">
+      <div className="">
         <Sider
           width={250}
           theme="light"
-          breakpoint="md"
+          breakpoint="lg"
           collapsedWidth="0"
           collapsed={isSidebarCollapsed}
           onCollapse={toggleSidebar}
