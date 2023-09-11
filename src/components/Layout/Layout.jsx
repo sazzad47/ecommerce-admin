@@ -35,7 +35,7 @@ const AppLayout = ({ children, active }) => {
       style={{ minHeight: "100vh" }}
       className={`site-layout-pranet ${isSidebarCollapsed ? "collapsed" : ""}`}
     >
-      <div className="">
+      <div className="test">
         <Sider
           width={250}
           theme="light"
