@@ -4,6 +4,7 @@ import { DashHooks } from "../../Features";
 import { useForm } from "react-hook-form";
 import { Oval } from "react-loader-spinner";
 import ImageGridWithDelete from "./ImageGridWithDelete";
+import { Button } from "@mui/material";
 const AddSliderImages = () => {
   const { useSlidersImages } = DashHooks;
   const { GetSliders, SlidersAddLoading, preAdding, SlidersData } =
@@ -21,13 +22,8 @@ const AddSliderImages = () => {
   return (
     <div>
       <h2>Add Slider Images</h2>
-      <form
-        className="d-flex g-15 a-center"
-        onSubmit={handleSubmit(OnhandleSubmit)}
-      >
-        <Form.Item label="Upload Slider Images">
-          <input multiple type="file" accept="image/*" {...register("files")} />
-        </Form.Item>
+      <form className="d-flex g-15" onSubmit={handleSubmit(OnhandleSubmit)}>
+        <input multiple type="file" accept="image/*" {...register("files")} />
         <button
           disabled={SlidersAddLoading}
           className="btn btn-primary"
@@ -39,6 +35,7 @@ const AddSliderImages = () => {
             "Click to Upload"
           )}
         </button>
+        <Button></Button>
       </form>
       <ImageGridWithDelete images={SlidersData?.data} />
     </div>
