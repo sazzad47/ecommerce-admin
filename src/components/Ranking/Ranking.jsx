@@ -35,12 +35,12 @@ const Ranking = ({ data }) => {
   ];
 
   return (
-    <>
+    <div style={{maxWidth: "100%"}}>
       <Title level={3}>Most Viewed Products</Title>
       <div className="ranking">
         <Table columns={columns} dataSource={data} pagination={false} />
       </div>
-    </>
+    </div>
   );
 };
 

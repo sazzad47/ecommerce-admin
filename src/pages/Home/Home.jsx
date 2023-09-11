@@ -61,18 +61,17 @@ const Home = () => {
               />
             </Col>
           </Row>
-          {/* <TodayOrders /> */}
-          <div className="d-flex g-15 mt-3 a-center">
-            <div className="f-2">
-              <DashChart data={InitialData?.data.orders_per_day} />
-            </div>
-            <div className="f-1">
-              <Ranking
+          <Row gutter={[16, 16]} style={{marginTop: "2rem"}}>
+            <Col xs={24} sm={16} md={16}>
+            <DashChart data={InitialData?.data.orders_per_day} />
+            </Col>
+            <Col xs={24} sm={8} md={8}>
+            <Ranking
                 title={"Most Viewed Products"}
                 data={InitialData?.data.total_views}
               />
-            </div>
-          </div>
+            </Col>
+          </Row>
         </div>
       )}
     </AppLayout>
