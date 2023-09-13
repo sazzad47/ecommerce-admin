@@ -40,6 +40,12 @@ const OrderSearch = ({ handleViewOrder }) => {
     GetOne();
   };
 
+  const handleInputKeyUp = (e) => {
+    if (e.key === "Enter") {
+      handleSubmit();
+    }
+  };
+
   return (
     <div>
       <div className="d-flex g-15">
@@ -47,6 +53,7 @@ const OrderSearch = ({ handleViewOrder }) => {
           placeholder="Search by Order Number"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
+          onKeyUp={handleInputKeyUp}
           style={{ marginBottom: 16 }}
           type="number"
         />
