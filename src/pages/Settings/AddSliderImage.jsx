@@ -37,7 +37,9 @@ const AddSliderImages = () => {
         </button>
         <Button></Button>
       </form>
+      <div style={{marginTop: "1rem"}}>
       <ImageGridWithDelete images={SlidersData?.data} />
+      </div>
     </div>
   );
 };
