@@ -1,4 +1,4 @@
-# React App Setup and Run Guide
+# App Setup and Run Guide
 
 ## Prerequisites
 
@@ -8,20 +8,14 @@ Before you get started, make sure you have the following installed on your syste
 
 ## Getting Started
 
-1. **Clone the Repository**: Begin by cloning the repository to your local machine using the following command:
-
-   ```
-   git clone https://mohamedehab10@bitbucket.org/imperialit1/ecommercefrontend.git
-   
-   cd ecommerceDash
-   
-   ```
-	
-    
+1. **Install dependencies**: 
+    Go to the root directory of the project and run this command
     npm install
-    
+
+2. **Run the project**:   
+	After all the dependencies are installed, run the project in the browser with this command
     npm run dev
-	
-Before statrt make sure you running the server on port 5000
+
+Before starting, make sure you are running the server on port 5000
 
 
